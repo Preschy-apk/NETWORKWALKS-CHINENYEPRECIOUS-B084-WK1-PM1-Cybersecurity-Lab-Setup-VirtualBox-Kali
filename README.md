@@ -1,4 +1,4 @@
-# CHINENYEPRECIOUS-B084-WK1-PM1 — Cybersecurity Lab Setup: VirtualBox and Kali Linux
+# NETWORKWALKS-CHINENYEPRECIOUS-B084-WK1-PM1 — Cybersecurity Lab Setup: VirtualBox and Kali Linux
 
 **Project Category:** Cybersecurity | Virtualization | Linux | Ethical Hacking  
 **Difficulty:** Beginner  
