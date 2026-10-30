@@ -150,32 +150,6 @@ During this project, I developed a better understanding of:
 
 I also learned the importance of checking network configuration when troubleshooting connectivity problems in virtual environments.
 
-## Project Status
-
-- [x] VirtualBox configured.
-- [x] Kali Linux virtual machine configured.
-- [x] Kali Linux ISO selected.
-- [x] Memory and display settings reviewed.
-- [x] Network adapter configured.
-- [x] Kali Linux boots successfully.
-- [x] Internet connectivity confirmed.
-- [ ] Additional terminal screenshots to be added.
-- [ ] Further cybersecurity practical exercises to be documented.
-
-## Future Improvements
-
-The next stage of this project will involve:
-
-- Installing and exploring cybersecurity tools.
-- Practising Linux commands.
-- Performing basic network reconnaissance in authorised lab environments.
-- Conducting vulnerability assessment exercises.
-- Documenting practical cybersecurity projects.
-
-## Safety and Ethical Considerations
-
-All cybersecurity activities carried out in this laboratory are intended for educational purposes and authorised testing only. Testing will be restricted to systems that I own or have explicit permission to assess.
-
 ## Official Resources
 
 - [Oracle VirtualBox](https://www.virtualbox.org/)
