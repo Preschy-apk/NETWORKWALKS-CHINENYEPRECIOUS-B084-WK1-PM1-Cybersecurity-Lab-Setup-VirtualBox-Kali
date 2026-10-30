@@ -2,28 +2,31 @@
 
 **Project Category:** Cybersecurity | Virtualization | Linux | Ethical Hacking  
 **Difficulty:** Beginner  
-**Status:** Kali Linux starts successfully, and internet access works.
+**Status:** Completed — Kali Linux starts successfully, and internet access works.
 
-## Project Overview
+---
 
-This project documents the preparation and configuration of a cybersecurity learning environment using Oracle VirtualBox and Kali Linux.
+## 1. Project Overview
 
-The purpose of this project is to establish a virtual environment where I can practise Linux administration, explore cybersecurity tools, perform security experiments, and develop practical skills in ethical hacking.
+This project documents the setup, configuration, and testing of a cybersecurity learning environment using Oracle VirtualBox and Kali Linux.
 
-The project includes virtual machine configuration, memory allocation, display settings, network configuration, ISO selection, and testing of the Kali Linux environment.
+The objective was to establish a virtual laboratory where I can practise Linux administration, explore cybersecurity tools, perform controlled security experiments, and develop practical skills in ethical hacking.
 
-## Project Objectives
+The project involved reviewing virtual machine settings, allocating system resources, configuring display and network settings, selecting the Kali Linux installation ISO, and verifying that the virtual environment works correctly.
+
+## 2. Project Objectives
 
 - Set up a virtual cybersecurity laboratory.
 - Configure a Kali Linux virtual machine.
 - Understand virtual machine hardware settings.
+- Allocate appropriate memory and display resources.
 - Configure network connectivity.
-- Verify that Kali Linux boots successfully.
+- Verify that Kali Linux starts successfully.
 - Test internet connectivity.
-- Document the setup process using screenshots.
+- Document the setup process with screenshots.
 - Prepare an environment for future cybersecurity and penetration-testing labs.
 
-## Tools and Technologies
+## 3. Tools and Technologies
 
 | Tool | Purpose |
 |---|---|
@@ -31,57 +34,64 @@ The project includes virtual machine configuration, memory allocation, display s
 | Oracle VirtualBox | Virtualization platform |
 | Kali Linux | Linux-based penetration-testing operating system |
 | Kali Linux ISO | Operating system installation image |
-| GitHub | Project documentation and version control |
 
-## Virtual Machine Configuration
+## 4. Downloading and Installing Oracle VirtualBox
 
-The following settings were reviewed during the project:
+Oracle VirtualBox is a free, open-source virtualization software that allows users to run multiple operating systems on one computer.
 
-- **Operating System:** Linux
-- **Distribution:** Debian
-- **Version:** Debian (64-bit)
-- **Allocated RAM:** 4096 MB (4 GB)
-- **Graphics Controller:** VMSVGA
-- **Video Memory:** 16 MB
-- **Network Adapter:** Adapter 1
-- **Network Mode:** NAT Network
-- **Network Name:** NATNETWORK
+### Step 1: Visit the Official VirtualBox Website
 
-## Installation and Configuration Process
+I accessed the official Oracle VirtualBox website:
 
-### 1. VirtualBox General Settings
+https://www.virtualbox.org/
 
-The virtual machine was configured with Linux as the operating system type and Debian (64-bit) as the version.
+### Step 2: Download VirtualBox
 
-![Kali General Settings](screenshots/01-kali-general-settings.png)
+1. Navigate to the **Downloads** section.
+2. Select **Windows hosts** under the VirtualBox platform packages.
+3. Download the Windows installer to your computer.
+4. Wait for the download to complete.
 
-### 2. System Configuration
+### Step 3: Install VirtualBox
 
-The virtual machine was allocated 4096 MB of RAM to support the Kali Linux environment.
+1. Locate the downloaded VirtualBox installer in the Downloads folder.
+2. Double-click the installer to launch the setup wizard.
+3. Follow the installation instructions.
+4. Accept the default installation options unless a specific change is required.
+5. Allow the installation process to complete.
+6. Click **Finish** to close the setup wizard.
 
-![Kali System Settings](screenshots/02-kali-system-settings.png)
+### Step 4: Launch VirtualBox
 
-### 3. Display Configuration
+After installation:
 
-The display settings were reviewed, including the VMSVGA graphics controller and 16 MB of video memory.
+1. Open Oracle VirtualBox from the Windows Start menu or desktop shortcut.
+2. Confirm that the VirtualBox Manager opens successfully.
+3. The application is now ready for creating and managing virtual machines.
 
-![Kali Display Settings](screenshots/03-kali-display-settings.png)
+**Official Download Page:** https://www.virtualbox.org/wiki/Downloads
 
-### 4. Network Configuration
+**Note:** Download VirtualBox only from the official Oracle website to avoid unofficial or modified installers.
 
-Adapter 1 was enabled and configured to use NAT Network with the network name NATNETWORK.
+## 5. Installation and Configuration Process
 
-![Kali Network Settings](screenshots/04-kali-network-settings.png)
+The following screenshots document the VirtualBox and Kali Linux setup process in a logical sequence.
 
-### 5. Creating the Virtual Machine
+### Step 1: Opening Oracle VirtualBox
 
-The initial virtual machine creation screen was reviewed before completing the required configuration details.
+I started by opening Oracle VirtualBox, the virtualization platform used to create and manage virtual machines.
+
+![VirtualBox Home Screen](screenshots/08-virtualbox-manager-home.png)
+
+### Step 2: Creating a New Virtual Machine
+
+I reviewed the new virtual machine creation screen before proceeding with the required configuration.
 
 ![New Virtual Machine](screenshots/05-new-vm-before-configuration.png)
 
-### 6. Selecting the Kali Linux ISO
+### Step 3: Selecting the Kali Linux ISO
 
-The Kali Linux installer ISO was selected:
+I selected the Kali Linux installer ISO:
 
 `kali-linux-2025.3-installer-amd64.iso`
 
@@ -89,27 +99,45 @@ The virtual machine was configured to use Linux, Debian, and Debian (64-bit).
 
 ![Kali ISO Configuration](screenshots/06-kali-iso-vm-configuration.png)
 
-### 7. VirtualBox Manager
+### Step 4: Configuring General Settings
 
-The VirtualBox Manager was used to review the available virtual machines, including Kali, Parrot OS, and Windows 10.
+I reviewed the virtual machine's general settings and confirmed Linux as the operating system type and Debian (64-bit) as the version.
+
+![Kali General Settings](screenshots/01-kali-general-settings.png)
+
+### Step 5: Configuring System Resources
+
+I allocated 4096 MB (4 GB) of RAM to the virtual machine to support the Kali Linux environment.
+
+![Kali System Settings](screenshots/02-kali-system-settings.png)
+
+### Step 6: Configuring Display Settings
+
+I reviewed the display configuration, including the VMSVGA graphics controller and 16 MB of video memory.
+
+![Kali Display Settings](screenshots/03-kali-display-settings.png)
+
+### Step 7: Configuring Network Settings
+
+I enabled Adapter 1 and configured the network connection to use NAT Network with the network name `NATNETWORK`.
+
+![Kali Network Settings](screenshots/04-kali-network-settings.png)
+
+### Step 8: Reviewing VirtualBox Manager
+
+Finally, I reviewed the VirtualBox Manager, which displayed the available virtual machines, including Kali, Parrot OS, and Windows 10.
 
 ![VirtualBox Manager](screenshots/07-virtualbox-manager-kali-vms.png)
 
-### 8. VirtualBox Home Screen
+## 6. Testing and Verification
 
-The VirtualBox home screen provides access to creating, opening, and importing virtual machines.
-
-![VirtualBox Home](screenshots/08-virtualbox-manager-home.png)
-
-## Testing and Verification
-
-After configuration, I confirmed that:
+After completing the setup, I confirmed that:
 
 - Kali Linux starts successfully.
 - Internet access is working.
 - The virtual machine is ready for further cybersecurity practice.
 
-The following Linux commands can be used to document network configuration and connectivity.
+The following Linux commands can be used to inspect network configuration and connectivity.
 
 **Check network interfaces:**
 
@@ -135,33 +163,53 @@ ping -c 4 1.1.1.1
 getent hosts kali.org
 ```
 
-These commands can provide additional evidence of the working network environment.
+These commands help verify network interfaces, routing, internet connectivity, and DNS resolution.
 
-## Troubleshooting and Lessons Learned
+## 7. Troubleshooting and Lessons Learned
 
 During this project, I developed a better understanding of:
 
-- Virtual machine configuration.
+- Virtual machine configuration and management.
 - RAM allocation and system resources.
 - Virtual network adapter settings.
 - NAT Network configuration.
 - Selecting an operating system ISO.
 - The relationship between a host operating system and a guest operating system.
+- Basic network connectivity troubleshooting.
 
-I also learned the importance of checking network configuration when troubleshooting connectivity problems in virtual environments.
+One important lesson was understanding how virtual network configuration affects internet connectivity within a virtual machine.
 
-## Official Resources
+## 8. Future Improvements
+
+The next stages of this cybersecurity laboratory will include:
+
+- Installing and exploring essential Kali Linux security tools.
+- Practising Linux commands and system administration.
+- Setting up intentionally vulnerable machines for authorised testing.
+- Performing basic vulnerability assessment exercises.
+- Documenting practical cybersecurity lab activities.
+- Building hands-on ethical hacking and defensive security projects.
+
+## 9. Ethical Considerations
+
+All future penetration-testing and security experiments will be conducted in authorised laboratory environments or on systems where permission has been granted.
+
+The purpose of this project is learning, skill development, and responsible cybersecurity practice.
+
+## 10. Official Resources
 
 - [Oracle VirtualBox](https://www.virtualbox.org/)
-- [Kali Linux](https://www.kali.org/)
+- [Kali Linux Official Website](https://www.kali.org/)
 - [Kali Linux Documentation](https://www.kali.org/docs/)
 - [Kali Linux Downloads](https://www.kali.org/get-kali/)
 
-## Author
+## 11. Author
 
 **Chinenye Precious Ubosi**
 
-**Project:** Cybersecurity Lab Setup – VirtualBox and Kali Linux  
+**Project Title:** Cybersecurity Lab Setup — VirtualBox and Kali Linux  
 **Project ID:** CHINENYEPRECIOUS-B084-WK1-PM1
 
 **Technologies:** Windows | Oracle VirtualBox | Kali Linux | GitHub
+
+**Field:** Cybersecurity | Ethical Hacking | Virtualization
