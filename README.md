@@ -109,7 +109,7 @@ After configuration, I confirmed that:
 - Internet access is working.
 - The virtual machine is ready for further cybersecurity practice.
 
-The following Linux commands can be used to document network configuration and connectivity:
+The following Linux commands can be used to document network configuration and connectivity.
 
 **Check network interfaces:**
 
