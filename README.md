@@ -1,211 +1,193 @@
 # CHINENYEPRECIOUS-B084-WK1-PM1 — Cybersecurity Lab Setup: VirtualBox and Kali Linux
 
-**Project category:** Cybersecurity | Virtualization | Linux | Ethical Hacking  
+**Project Category:** Cybersecurity | Virtualization | Linux | Ethical Hacking  
 **Difficulty:** Beginner  
-**Status:** In progress — virtual machine configuration documented; successful Kali boot and network tests still need evidence.
+**Status:** Kali Linux starts successfully, and internet access works.
 
-## Project overview
+## Project Overview
 
-This project documents the preparation of a virtual cybersecurity learning environment using Oracle VirtualBox on a Windows host and Kali Linux as the guest operating system. Virtualization makes it possible to practise Linux administration and future security exercises without replacing the host operating system.
+This project documents the preparation and configuration of a cybersecurity learning environment using Oracle VirtualBox and Kali Linux.
 
-The screenshots currently available show VirtualBox configuration screens, a Kali Linux installer ISO selected for a new virtual machine, and the VirtualBox Manager. They do **not yet show Kali successfully booted or network tests completing**, so those outcomes are left for later verification.
+The purpose of this project is to establish a virtual environment where I can practise Linux administration, explore cybersecurity tools, perform security experiments, and develop practical skills in ethical hacking.
 
-## Objectives
+The project includes virtual machine configuration, memory allocation, display settings, network configuration, ISO selection, and testing of the Kali Linux environment.
 
-- Install and open Oracle VirtualBox on Windows.
-- Select the official Kali Linux installer image.
-- Create and configure a Kali Linux virtual machine.
-- Review memory, display, storage, and networking settings.
-- Complete the Kali installation and verify that it boots.
-- Test IP configuration, routing, internet connectivity, and DNS.
-- Document the process with authentic screenshots.
-- Prepare a reusable lab for future authorised cybersecurity practice.
+## Project Objectives
 
-## Tools and technologies
+- Set up a virtual cybersecurity laboratory.
+- Configure a Kali Linux virtual machine.
+- Understand virtual machine hardware settings.
+- Configure network connectivity.
+- Verify that Kali Linux boots successfully.
+- Test internet connectivity.
+- Document the setup process using screenshots.
+- Prepare an environment for future cybersecurity and penetration-testing labs.
+
+## Tools and Technologies
 
 | Tool | Purpose |
 |---|---|
-| Windows host | Runs VirtualBox |
+| Windows 10/11 | Host operating system |
 | Oracle VirtualBox | Virtualization platform |
-| Kali Linux installer ISO | Installs the guest operating system |
-| Kali terminal | Network and system checks after installation |
-| GitHub | Stores documentation and screenshots |
+| Kali Linux | Linux-based penetration-testing operating system |
+| Kali Linux ISO | Operating system installation image |
+| GitHub | Project documentation and version control |
 
-## Installation approach
+## Virtual Machine Configuration
 
-The screenshots indicate that this project is using the **ISO installation method**, rather than importing a prebuilt Kali virtual machine. The ISO shown in the screenshot is named `kali-linux-2025.3-installer-amd64.iso`.
+The following settings were reviewed during the project:
 
-Official resources:
-- [Oracle VirtualBox downloads](https://www.virtualbox.org/wiki/Downloads)
-- [Kali Linux downloads](https://www.kali.org/get-kali/)
-- [Kali Linux installation documentation](https://www.kali.org/docs/installation/)
-- [Kali Linux VirtualBox documentation](https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/)
+- **Operating System:** Linux
+- **Distribution:** Debian
+- **Version:** Debian (64-bit)
+- **Allocated RAM:** 4096 MB (4 GB)
+- **Graphics Controller:** VMSVGA
+- **Video Memory:** 16 MB
+- **Network Adapter:** Adapter 1
+- **Network Mode:** NAT Network
+- **Network Name:** NATNETWORK
 
-## Step 1 — Review the virtual machine identity and operating system
+## Installation and Configuration Process
 
-The General settings screenshot shows the VM name as `Kal`, with Linux selected, Debian as the distribution, and Debian (64-bit) as the version.
+### 1. VirtualBox General Settings
 
-For a clearer project, rename the VM to **Kali Linux** or **kali-linux** before installation, if the VM is powered off. This is a display name and does not itself change the guest operating system.
+The virtual machine was configured with Linux as the operating system type and Debian (64-bit) as the version.
 
-![Kali general settings](screenshots/01-kali-general-settings.png)
+![Kali General Settings](screenshots/01-kali-general-settings.png)
 
-*Figure 1. VirtualBox General settings for the Kali VM.*
+### 2. System Configuration
 
-## Step 2 — Review memory and boot settings
+The virtual machine was allocated 4096 MB of RAM to support the Kali Linux environment.
 
-The System screenshot shows **4096 MB (4 GB) of base memory**. This is a reasonable starting allocation if the Windows host has sufficient RAM available. Keep enough memory for Windows and other running applications.
+![Kali System Settings](screenshots/02-kali-system-settings.png)
 
-The screenshot also shows the boot-device order and other motherboard settings. For an ISO installation, the virtual optical drive must be available during the initial boot. After Kali is installed, the virtual hard disk should be used for normal startup.
+### 3. Display Configuration
 
-![Kali system settings](screenshots/02-kali-system-settings.png)
+The display settings were reviewed, including the VMSVGA graphics controller and 16 MB of video memory.
 
-*Figure 2. System settings, including 4096 MB of allocated memory.*
+![Kali Display Settings](screenshots/03-kali-display-settings.png)
 
-## Step 3 — Review display settings
+### 4. Network Configuration
 
-The Display screenshot shows 16 MB of video memory and the VMSVGA graphics controller. Once the guest operating system is installed, if the display is too small or performs poorly, shut down the VM and review the display settings. Increase video memory where VirtualBox permits and the host has adequate resources. Do not enable 3D acceleration unless needed for troubleshooting or performance.
+Adapter 1 was enabled and configured to use NAT Network with the network name NATNETWORK.
 
-![Kali display settings](screenshots/03-kali-display-settings.png)
+![Kali Network Settings](screenshots/04-kali-network-settings.png)
 
-*Figure 3. Virtual display configuration before the first successful boot.*
+### 5. Creating the Virtual Machine
 
-## Step 4 — Review the virtual network adapter
+The initial virtual machine creation screen was reviewed before completing the required configuration details.
 
-The Network screenshot shows Adapter 1 enabled and attached to **NAT Network**, with the network named `NATNETWORK` and “Virtual Cable Connected” selected.
+![New Virtual Machine](screenshots/05-new-vm-before-configuration.png)
 
-NAT Network is a valid option when configured correctly, especially if multiple VMs need to share the same NAT network. It is not the same as the simpler **NAT** mode. Before troubleshooting internet access, confirm that the NAT network named `NATNETWORK` exists and is started in VirtualBox's network settings. If you only need internet access from one VM, you can also use **NAT** as a simpler initial test.
+### 6. Selecting the Kali Linux ISO
 
-![Kali network settings](screenshots/04-kali-network-settings.png)
+The Kali Linux installer ISO was selected:
 
-*Figure 4. Adapter 1 is enabled and attached to the NAT Network named NATNETWORK.*
+`kali-linux-2025.3-installer-amd64.iso`
 
-## Step 5 — Create a new virtual machine
+The virtual machine was configured to use Linux, Debian, and Debian (64-bit).
 
-The New Virtual Machine screenshot first shows an incomplete form with the VM name missing. That is an initial setup screen, not a completed installation. The next screenshot shows the form filled in with `kali-linux`, the Kali installer ISO, Linux, Debian, and Debian (64-bit).
+![Kali ISO Configuration](screenshots/06-kali-iso-vm-configuration.png)
 
-![New VM form before configuration](screenshots/05-new-vm-before-configuration.png)
+### 7. VirtualBox Manager
 
-*Figure 5. Initial New Virtual Machine screen before the required fields were completed.*
+The VirtualBox Manager was used to review the available virtual machines, including Kali, Parrot OS, and Windows 10.
 
-## Step 6 — Select the Kali installer ISO
+![VirtualBox Manager](screenshots/07-virtualbox-manager-kali-vms.png)
 
-The configured VM form shows:
-- VM name: `kali-linux`
-- ISO image: `kali-linux-2025.3-installer-amd64.iso`
-- OS: Linux
-- Distribution: Debian
-- Version: Debian (64-bit)
-- Unattended installation: not selected
+### 8. VirtualBox Home Screen
 
-Leaving unattended installation unchecked allows you to proceed through the Kali installer manually, following its prompts for language, location, keyboard, account, time zone, disk setup, software, and bootloader as applicable.
+The VirtualBox home screen provides access to creating, opening, and importing virtual machines.
 
-Before clicking **Finish**, expand the hardware and virtual hard disk sections and review the proposed memory, CPU, and disk allocation. Make sure the virtual disk has sufficient capacity and that you have selected the intended ISO.
+![VirtualBox Home](screenshots/08-virtualbox-manager-home.png)
 
-![Kali ISO VM configuration](screenshots/06-kali-iso-vm-configuration.png)
+## Testing and Verification
 
-*Figure 6. Kali installer ISO selected in the New Virtual Machine wizard.*
+After configuration, I confirmed that:
 
-## Step 7 — Check VirtualBox Manager
+- Kali Linux starts successfully.
+- Internet access is working.
+- The virtual machine is ready for further cybersecurity practice.
 
-The VirtualBox Manager screenshot shows entries named `Kal`, `Parrot os`, and `windows 10`, all powered off. This confirms that VirtualBox Manager lists these VMs; it does not prove that Kali has booted successfully.
+The following Linux commands can be used to document network configuration and connectivity:
 
-![VirtualBox Manager with VMs](screenshots/07-virtualbox-manager-kali-vms.png)
-
-*Figure 7. VirtualBox Manager listing the configured virtual machines.*
-
-A second screenshot shows the VirtualBox Manager home screen with options to create, open, or import a virtual machine.
-
-![VirtualBox Manager home](screenshots/08-virtualbox-manager-home.png)
-
-*Figure 8. VirtualBox Manager home screen.*
-
-## Step 8 — Complete the Kali installation
-
-This step still needs to be performed and documented:
-
-1. Select `kali-linux` in VirtualBox Manager.
-2. Click **Start**.
-3. When the Kali boot menu appears, select the graphical installer (if offered).
-4. Follow the installer prompts carefully.
-5. When partitioning, ensure changes apply to the VM's virtual disk, not the Windows host disk.
-6. Complete installation and install the bootloader when prompted.
-7. Restart the VM.
-8. If it returns to the installer, detach the ISO from the virtual optical drive and boot from the virtual hard disk.
-9. Sign in with the account credentials created during installation.
-
-**Screenshot to add:** `09-kali-installer.png` — capture a relevant installer screen.  
-**Screenshot to add:** `10-kali-desktop.png` — capture the Kali desktop after a successful boot.
-
-## Step 9 — Verify network configuration
-
-After Kali boots, open Terminal and run:
+**Check network interfaces:**
 
 ```bash
 ip address
 ```
 
-This displays network interfaces and assigned addresses. Then run:
+**Check the routing table:**
 
 ```bash
 ip route
 ```
 
-Check whether a default route exists. Record the actual output rather than copying an example address from another machine.
-
-**Screenshot to add:** `11-kali-ip-address.png`  
-**Screenshot to add:** `12-kali-routing-table.png`
-
-## Step 10 — Test connectivity and DNS
-
-Test IP connectivity:
+**Test internet connectivity:**
 
 ```bash
 ping -c 4 1.1.1.1
 ```
 
-Then test DNS resolution:
+**Test DNS resolution:**
 
 ```bash
 getent hosts kali.org
 ```
 
-A failed ping does not automatically mean the VM has no internet access, because ICMP may be filtered. Interpret the results alongside the route, DNS lookup, and other connectivity checks.
+These commands can provide additional evidence of the working network environment.
 
-**Screenshot to add:** `13-kali-connectivity-test.png`  
-**Screenshot to add:** `14-kali-dns-test.png`
+## Troubleshooting and Lessons Learned
 
-## Troubleshooting notes
+During this project, I developed a better understanding of:
 
-If the VM does not start or has no network access:
+- Virtual machine configuration.
+- RAM allocation and system resources.
+- Virtual network adapter settings.
+- NAT Network configuration.
+- Selecting an operating system ISO.
+- The relationship between a host operating system and a guest operating system.
 
-- Record the exact error message.
-- Confirm the VM has adequate RAM, CPU, and virtual disk space.
-- Confirm the Kali ISO is attached during installation.
-- For NAT Network, confirm `NATNETWORK` exists and is running.
-- Check `ip address` and `ip route` inside Kali.
-- Change one setting at a time and repeat the test.
+I also learned the importance of checking network configuration when troubleshooting connectivity problems in virtual environments.
 
-Add only troubleshooting steps and outcomes that you actually experienced.
+## Project Status
 
-## Current status and next steps
+- [x] VirtualBox configured.
+- [x] Kali Linux virtual machine configured.
+- [x] Kali Linux ISO selected.
+- [x] Memory and display settings reviewed.
+- [x] Network adapter configured.
+- [x] Kali Linux boots successfully.
+- [x] Internet connectivity confirmed.
+- [ ] Additional terminal screenshots to be added.
+- [ ] Further cybersecurity practical exercises to be documented.
 
-- [x] VirtualBox Manager opened.
-- [x] Kali VM settings reviewed.
-- [x] Kali installer ISO selected in the VM wizard.
-- [x] Memory, display, and network settings captured.
-- [ ] Finish VM creation and complete Kali installation.
-- [ ] Capture successful Kali desktop.
-- [ ] Test IP configuration, routing, connectivity, and DNS.
-- [ ] Record actual test results and any troubleshooting.
-- [ ] Update project status to Completed only after verification.
+## Future Improvements
 
-## Safety and ethical use
+The next stage of this project will involve:
 
-This lab is for learning and authorised security testing. Only test systems you own or have explicit permission to assess. Keep vulnerable test systems isolated from untrusted networks.
+- Installing and exploring cybersecurity tools.
+- Practising Linux commands.
+- Performing basic network reconnaissance in authorised lab environments.
+- Conducting vulnerability assessment exercises.
+- Documenting practical cybersecurity projects.
 
-## Project details
+## Safety and Ethical Considerations
 
-**Author:** Chinenye Precious Ubosi  
-**Project ID:** CHINENYEPRECIOUS-B084-WK1-PM1  
-**Platform:** Windows + Oracle VirtualBox + Kali Linux  
-**Project type:** Hands-on cybersecurity lab setup
+All cybersecurity activities carried out in this laboratory are intended for educational purposes and authorised testing only. Testing will be restricted to systems that I own or have explicit permission to assess.
+
+## Official Resources
+
+- [Oracle VirtualBox](https://www.virtualbox.org/)
+- [Kali Linux](https://www.kali.org/)
+- [Kali Linux Documentation](https://www.kali.org/docs/)
+- [Kali Linux Downloads](https://www.kali.org/get-kali/)
+
+## Author
+
+**Chinenye Precious Ubosi**
+
+**Project:** Cybersecurity Lab Setup – VirtualBox and Kali Linux  
+**Project ID:** CHINENYEPRECIOUS-B084-WK1-PM1
+
+**Technologies:** Windows | Oracle VirtualBox | Kali Linux | GitHub
